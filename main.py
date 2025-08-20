@@ -36,7 +36,7 @@ plt.show()
 
 
 """
-#Cinsiyete Gore Ort. Total UPDRS Arasindaki İliskisi
+#Cinsiyete Gore Ort. Total UPDRS arasindaki İliskisi
 df['sex'] = df['sex'].map({True: 'Kadın', False: 'Erkek'})
 total_updrs_means = df.groupby('sex')['total_updrs'].mean()
 plt.figure(figsize=(10,10))
