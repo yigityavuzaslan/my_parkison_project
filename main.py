@@ -12,4 +12,11 @@ print(df["test_time"].describe())
 print(df.info())
 
 
+#Yas ve Motor UPDRS Arasindaki iliski
+plt.figure(figsize=(15,15))
+plt.title("Yaş ve motor UPDRS Arasındaki İlişki")
+sns.barplot(x="age",y="motor_updrs",data=df)
+plt.xlabel("Yas")
+plt.ylabel("Motor UPDRS Siddeti")
+plt.show()
 
