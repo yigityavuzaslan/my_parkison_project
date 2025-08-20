@@ -20,3 +20,16 @@ plt.xlabel("Yas")
 plt.ylabel("Motor UPDRS Siddeti")
 plt.show()
 
+
+"""
+#Cinsiyete Gore Motor UPDRS Skoru
+df['sex'] = df['sex'].map({True: 'Kadın', False: 'Erkek'})
+motor_updrs_means = df.groupby('sex')['motor_updrs'].mean()
+plt.figure(figsize=(10,10))
+plt.title("Cinsiyet ve Motor UPDRS Arasındaki İlişki")
+sns.barplot(x=motor_updrs_means.index, y=motor_updrs_means.values, palette='viridis')
+plt.xlabel("Cinsiyet")
+plt.ylabel("Ortalama Motor UPDRS Skoru")
+plt.show()
+"""
+
