@@ -33,3 +33,19 @@ plt.ylabel("Ortalama Motor UPDRS Skoru")
 plt.show()
 """
 
+
+
+"""
+#Cinsiyete Gore Ort. Total UPDRS Arasindaki İliski
+df['sex'] = df['sex'].map({True: 'Kadın', False: 'Erkek'})
+total_updrs_means = df.groupby('sex')['total_updrs'].mean()
+plt.figure(figsize=(10,10))
+plt.title("Cinsiyet ve Total UPDRS Arasındaki İlişki",color='red')
+tablo=sns.barplot(x=total_updrs_means.index, y=total_updrs_means.values, palette="pastel") ##pastel,bright,deep,muted
+tablo.bar_label(tablo.containers[0], fmt='%.2f')
+tablo.bar_label(tablo.containers[1], fmt='%.2f')
+plt.xlabel("Cinsiyet")
+plt.ylabel("Ortalama Total UPDRS Skoru",color='black')
+plt.show()
+"""
+
