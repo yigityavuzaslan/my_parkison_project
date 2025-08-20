@@ -65,3 +65,20 @@ plt.ylabel("Motor UPDRS Skoru",color='black')
 sns.lineplot(x="test_time",y="motor_updrs",data=df_filtered)
 plt.show()
 """
+
+
+
+"""
+#Tüm denekler için ayrı ayrı alt grafikler
+selected_subjects_for_facet = df['subject'].unique()[:9]
+df_facet = df[df['subject'].isin(selected_subjects_for_facet)].copy()
+
+#FacetGrid ile her denek icin ayri bir alt grafik
+g = sns.FacetGrid(df_facet, col='subject', col_wrap=3, height=3, aspect=1.2, sharey=True)
+g.map(sns.lineplot, 'test_time', 'motor_updrs', marker='o')
+g.set_axis_labels("Süre (Gün)", "Motor UPDRS")
+g.set_titles("Denek {col_name}")
+g.tight_layout()  ##alt grafiklerin otomatik olarak çakışmasını engeller
+plt.suptitle('Her Bir Denek İçin Motor UPDRS Zaman Serisi', y=1.001) #genel baslik
+plt.show()
+"""
