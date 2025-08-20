@@ -49,3 +49,19 @@ plt.ylabel("Ortalama Total UPDRS Skoru",color='black')
 plt.show()
 """
 
+
+
+
+"""
+#ilk deneğin zamana göre Motor UPDRS Skoru Değişimi
+first_subjects = df['subject'].unique()[:1]
+df_filtered = df[df['subject'].isin(first_subjects)]
+
+
+plt.figure(figsize=(10,10))
+plt.title("Test Süresine Göre Motor UPDRS Skoru ")
+plt.xlabel("Test Süresi(Gün)")
+plt.ylabel("Motor UPDRS Skoru",color='black')
+sns.lineplot(x="test_time",y="motor_updrs",data=df_filtered)
+plt.show()
+"""
